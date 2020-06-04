@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- Bootstrap Stylesheet -->
+
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+
+<!-- Bootstrap JS -->
+
+<script src="plugins/jquery/jquery.min.js"></script>
+
+<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- <a href="https://www.jqueryscript.net/tags.php?/Carousel/">Carousel</a> Extension -->
+
+<script src="carousel.js"></script>
+<style type="text/css">
+		/* medium - display 2  */
+
+@media (min-width:768px) {
+
+
+  .carousel-inner .carousel-item-right.active,
+
+  .carousel-inner .carousel-item-next {
+
+      transform: translateX(50%);
+
+  }
+
+ 
+
+  .carousel-inner .carousel-item-left.active,
+
+  .carousel-inner .carousel-item-prev {
+
+      transform: translateX(-50%);
+
+  }
+
+}
+
+ 
+
+/* large - display 3 */
+
+@media (min-width:992px) {
+
+ 
+
+  .carousel-inner .carousel-item-right.active,
+
+  .carousel-inner .carousel-item-next {
+   transform: translateX(33%);
+
+  }
+
+ 
+
+  .carousel-inner .carousel-item-left.active,
+
+  .carousel-inner .carousel-item-prev {
+
+      transform: translateX(-33%);
+
+  }
+
+}
+
+ 
+
+@media (max-width:768px) {
+
+  .carousel-inner .carousel-item>div {
+
+      display:none;
+
+  }
+
+ 
+
+  .carousel-inner .carousel-item>div:first-child {
+
+      display:block;
+
+  }
+
+}
+
+ 
+
+.carousel-inner .carousel-item.active,
+
+.carousel-inner .carousel-item-next,
+
+.carousel-inner .carousel-item-prev {
+
+  display: flex;
+
+}
+
+ 
+
+.carousel-inner .carousel-item-right,
+
+.carousel-inner .carousel-item-left {
+
+  transform: translateX(0);
+
+}
+
+	</style>
+</head>
+<body>
+	
+<div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
+
+  <div class="carousel-inner w-100" role="listbox">
+
+    <div class="carousel-item active">
+
+      <div class="col-lg-4 col-md-6">
+
+        <img class="img-fluid" src="http://placehold.it/350x180?text=1">
+
+      </div>
+
+    </div>
+
+    <div class="carousel-item">
+
+      <div class="col-lg-4 col-md-6">
+
+        <img class="img-fluid" src="http://placehold.it/350x180?text=2">
+
+      </div>
+
+    </div>
+
+    <div class="carousel-item">
+
+      <div class="col-lg-4 col-md-6">
+        <img class="img-fluid" src="http://placehold.it/350x180?text=3">
+
+      </div>
+
+    </div>
+
+    <div class="carousel-item">
+
+      <div class="col-lg-4 col-md-6">
+
+        <img class="img-fluid" src="http://placehold.it/350x180?text=4">
+
+      </div>
+
+    </div>
+
+    <div class="carousel-item">
+
+      <div class="col-lg-4 col-md-6">
+
+        <img class="img-fluid" src="http://placehold.it/350x180?text=5">
+
+      </div>
+
+    </div>
+
+    <div class="carousel-item">
+
+      <div class="col-lg-4 col-md-6">
+        <img class="img-fluid" src="http://placehold.it/350x180?text=6">
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <a class="carousel-control-prev bg-dark w-auto" href="#myCarousel" role="button" data-slide="prev">
+
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+    <span class="sr-only">Previous</span>
+
+  </a>
+
+  <a class="carousel-control-next bg-dark w-auto" href="#myCarousel" role="button" data-slide="next">
+
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+
+<script type="text/javascript" src="plugins/jquery/jquery.min.js"></script>
+<script type="text/javascript">
+	$("#myCarousel").on("slide.bs.carousel", function(e) {
+  var $e = $(e.relatedTarget);
+  var idx = $e.index();
+  var itemsPerSlide = 3;
+  var totalItems = $(".carousel-item").length;
+
+  if (idx >= totalItems - (itemsPerSlide - 1)) {
+    var it = itemsPerSlide - (totalItems - idx);
+    for (var i = 0; i < it; i++) {
+      // append slides to end
+      if (e.direction == "left") {
+        $(".carousel-item")
+          .eq(i)
+          .appendTo(".carousel-inner");
+      } else {
+        $(".carousel-item")
+          .eq(0)
+          .appendTo($(this).find(".carousel-inner"));
+      }
+    }
+  }
+});
+
+</script>
+</body>
+</html>

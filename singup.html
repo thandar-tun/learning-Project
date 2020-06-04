@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sing Up Form</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	
+</head>
+<body>
+	<div class="container">
+		<div class="row mt-3">
+			<div class="col-md-12">
+				<h3 class="text-center">Sign Up Form</h3>
+				<form action="/action_page.php">
+					<div class="form-group">
+						<label for="name">Name:</label>
+						<input type="email" class="form-control border border-dark" id="name" placeholder="Your Name">
+					</div>
+					<div class="form-group">
+						<label for="phone">Phone:</label>
+						<input type="password" class="form-control border border-dark" id="phone" placeholder="Phone Number">
+					</div>
+					<div class="form-group">
+						<label for="nrc" >NRC:</label>
+						<select class="form-control border border-dark" id="nrc">
+							<option>--Select One--</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="divide">/</label>
+						<select class="form-control border border-dark" id="divide">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="national">(N)</label>
+						<input type="password" class="form-control border border-dark" id="national" placeholder="233654">
+					</div>
+					<div class="form-group">
+						<label for="division">Division:</label>
+						<select class="form-control border border-dark" id="division">
+							<option>--Select Division--</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="city">City:</label>
+						<select class="form-control border border-dark" id="city">
+							<option>--Select City--</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="password">Password:</label>
+						<input type="password" class="form-control border border-dark" id="password">
+					</div>
+					<div class="form-group">
+						<label for="sel1">Interest:</label>
+						<select class="form-control border border-dark" id="sel1">
+							<option>--Select Interest--</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+						</select>
+					</div>
+					<h6>Are you currently running business/farm?</h6>
+					<div class="radio">
+						<label><input type="radio" name="optradio" checked>Yes</label>
+					</div>
+					<div class="radio">
+						<label><input type="radio" name="optradio">No</label>
+					</div>
+
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

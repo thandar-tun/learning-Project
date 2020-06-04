@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>AdminLTE 3 | Starter</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+ <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+  <link rel="shortcut icon" href="../favicon.ico"> 
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="js/modernizr.custom.63321.js"></script>
+  <style type="text/css">
+  /* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #fff;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  /*content: "\2212";*/
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+/*############################*/
+/*For card*/
+.border-blue{
+  border-top: 3px solid #02b3e4;
+  box-shadow: 0 0 4px 0 rgba(17,22,26,.16), 0 2px 4px 0 rgba(17,22,26,.08), 0 4px 8px 0 rgba(17,22,26,.08);
+  border-radius: 8px;
+}
+.border-yellow{
+  border-top: 3px solid #ffae0c;
+  box-shadow: 0 0 4px 0 rgba(17,22,26,.16), 0 2px 4px 0 rgba(17,22,26,.08), 0 4px 8px 0 rgba(17,22,26,.08);
+  border-radius: 8px;
+}
+.border-green{
+  border-top: 3px solid #15c26b;
+  border-bottom: 3px solid #15c26b;
+  box-shadow: 0 0 4px 0 rgba(17,22,26,.16), 0 2px 4px 0 rgba(17,22,26,.08), 0 4px 8px 0 rgba(17,22,26,.08);
+  border-radius: 8px;
+}
+.border-purple{
+  border-top: 3px solid #a951ed;
+  box-shadow: 0 0 4px 0 rgba(17,22,26,.16), 0 2px 4px 0 rgba(17,22,26,.08), 0 4px 8px 0 rgba(17,22,26,.08);
+  border-radius: 8px;
+}
+p{
+      color: #525c65;
+      line-height: 24px;
+    
+}
+h3{
+  font-family: 'Open Sans', sans-serif;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+.slideImage{
+  height: 500px;
+}
+.myButton {
+  box-shadow: 0px 1px 0px 0px #f0f7fa;
+  background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+  background-color:#33bdef;
+  border-radius:6px;
+  border:1px solid #057fd0;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px -1px 0px #5b6178;
+}
+.myButton:hover {
+  background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+  background-color:#019ad2;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+ /*For Carousel*/
+
+.carousel {
+  position: relative;
+ 
+}
+
+ol.carousel-indicators {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+}
+
+ol.carousel-indicators li,
+ol.carousel-indicators li.active {
+  float: left;
+  width: 33%;
+  height: 5px;
+  margin: 0;
+  border-radius: 0;
+  border: 0;
+  background: transparent;
+}
+
+ol.carousel-indicators li.active {
+  background: skyblue;
+}
+@media only screen and (max-width: 600px) {
+ #accordionSection{
+    margin-right: 20px;
+  }
+  .slideImage{
+  height: 300px;
+}
+.cardSection{
+  width: 300px;
+  margin-left: 80px;
+}
+
+}
+</style>
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars" style="color: #15c26b"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index3.html" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
+
+    <!-- SEARCH FORM -->
+    <!-- <form class="form-inline ml-3">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form> -->
+
+   
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="profile.html" class="d-block">Alexander Pierce</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+         <!--  <li class="nav-item has-treeview menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Starter Pages
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Active Page</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Inactive Page</p>
+                </a>
+              </li>
+            </ul>
+          </li> -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Simple Link
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Program
+               <!--  <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+               Carrer
+               <!--  <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="sing
+            up.html" class="nav-link">
+              <i class="fas fa-sign-in-alt"></i>
+              <p>
+                Singin
+               <!--  <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" style="background: white">
+     <div class="container">
+      
+            <div id="accordionSection" class="mt-5">
+              <h3 class="text-center"> To find your perfect program</h3>
+              <button class="accordion">Section 1</button>
+                <div class="panel">
+                 <!--  ##### -->
+                  <table class="table table-responsive">
+                  <tr>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                  </tr>
+                </table>
+                  <!--  ######## -->
+                </div>
+
+              <button class="accordion">Section 2</button>
+               <div class="panel">
+                 <!--  ##### -->
+                 <table class="table table-responsive">
+                  <tr>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                  </tr>
+                </table>
+                  <!--  ######## -->
+                </div>
+              <button class="accordion">Section 3</button>
+                <div class="panel">
+                 <!--  ##### -->
+                 <table class="table table-responsive">
+                  <tr>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                    <td>
+                      <div class="card mb-2" style="width: 200px;">
+                            <img class="card-img-top"
+                            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                            <div class="card-body">
+                              <h4 class="card-title">Card title</h4>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                              card's content.</p>
+                              <a class="btn btn-primary">Button</a>
+                            </div>
+                          </div>
+                    </td>
+                  </tr>
+                </table>
+                  <!--  ######## -->
+                </div>
+            </div>
+            <div id="cardSection">
+              <h3 class="text-center mt-3 mb-3">Don't waste your valuable time or money</h3>
+              <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12  ">
+                  <div class="card border-green mb-5 cardSection" >
+                    <!-- <i class="fas fa-lemon text-center fa-2x mt-3"></i> -->
+                    <span style=" color: #15c26b;text-align: center;">
+                      <i class="fas fa-lemon fa-2x mt-3"></i>
+                    </span>
+                    <h4 class="card_title mb-2 mt-3 text-center">Get real skills</h4>
+                    <p class="card_subtitle mb-5 text-center">Our quality curriculum is designed with top-tier industry partners, not academics, so you learn the high-impact skills that top companies want.</p>
+
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 ">
+                  <div class="card border-green mb-5 cardSection">
+                   <!--  <i class="fas fa-leaf text-center fa-2x mt-3"></i> -->
+                    <span style=" color:#15c26b;text-align: center;">
+                      <i class="fas fa-leaf text-center fa-2x mt-3"></i>
+                    </span>
+                    <h4 class="card_title mb-2 mt-3 text-center">Get real skills</h4>
+                    <p class="card_subtitle mb-5 text-center">Our quality curriculum is designed with top-tier industry partners, not academics, so you learn the high-impact skills that top companies want.</p>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 ">
+                  <div class="card border-green mb-5 cardSection">
+                    <!-- <i class="fab fa-canadian-maple-leaf text-center fa-2x mt-3"></i> -->
+                    <span style=" color:#15c26b;text-align: center;">
+                      <i class="fab fa-canadian-maple-leaf text-center fa-2x mt-3"></i>
+                    </span>
+                    <h4 class="card_title mb-2 mt-3 text-center">Get real skills</h4>
+                    <p class="card_subtitle mb-5 text-center">Our quality curriculum is designed with top-tier industry partners, not academics, so you learn the high-impact skills that top companies want.</p>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 ">
+                  <div class="card border-green mb-5 cardSection">
+                   <!--  <i class="fab fa-envira text-center fa-2x mt-3"></i> -->
+                   <span style=" color:#15c26b;text-align: center;">
+                      <i class="fab fa-envira text-center fa-2x mt-3"></i>
+                    </span>
+                    <h4 class="card_title mb-2 mt-3 text-center">Get real skills</h4>
+                    <p class="card_subtitle mb-5 text-center">Our quality curriculum is designed with top-tier industry partners, not academics, so you learn the high-impact skills that top companies want.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselIndicators" data-slide-to="3"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100 slideImage" src="image/slide1.jpg" alt="First slide" >
+                  <div class="carousel-caption d-block d-md-block">
+                    <a class="button myButton" href="" target="_self">Click Me</a>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 slideImage" src="image/slide2.jpg" alt="Second slide">
+                  <div class="carousel-caption d-block d-md-block">
+                    <a class="button myButton" href="" target="_self">Click Me</a>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 slideImage" src="image/slide3.jpg" alt="Third slide">
+                  <div class="carousel-caption d-block d-md-block">
+                    <a class="button myButton" href="" target="_self">Click Me</a>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100 slideImage" src="image/slide4.jpg" alt="Fourth slide">
+                  <div class="carousel-caption d-block d-md-block">
+                    <a class="button myButton" href="" target="_self">Click Me</a>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          <!-- </div>
+        </div> -->
+      </div>
+  
+  </div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+
+
+<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/jquery.catslider.js"></script>
+ <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+
+$(function() {
+
+        $( '#mi-slider' ).catslider();
+
+      });
+  </script>
+</body>
+</html>
